@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ImportExportAction">
+		<item key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID" value="org.eclipse.ui.wizards.import.FileSystem"/>
+		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Basic"/>
+		</list>
+	</section>
+	<section name="FileSystemImportWizard">
+		<item key="WizardFileSystemResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID" value="false"/>
+		<item key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID" value="false"/>
+		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="G:\Shared drives\CSAwesome Drive\Teacher Resources\AP CSA College Board Lab Student Guides\Celebrity\Student"/>
+			<item value="G:\My Drive\Eastern 22-23\AP Computer Science\Picture and Steg Labs\StegStudentCode"/>
+			<item value="C:\Users\bortma1\eclipse-workspace\DataLab23"/>
+			<item value="G:\My Drive\Eastern 22-23\AP Computer Science\Unit 06\6.2"/>
+			<item value="G:\My Drive\Eastern 22-23\AP Computer Science\Unit 06\6.1\Images"/>
+			<item value="G:\My Drive\Eastern 22-23\AP Computer Science\Unit 04\Consumer Review Lab\Code"/>
+			<item value="G:\My Drive\Eastern 22-23\AP Computer Science\Unit 05\Labs\DataStudentCode"/>
+			<item value="G:\My Drive\Eastern 22-23\AP Computer Science\Unit 05\Labs\Celeb Lab Student Code"/>
+			<item value="G:\My Drive\Eastern 22-23\AP Computer Science\Java Swing Turtle"/>
+		</list>
+	</section>
+</section>
