@@ -11,18 +11,22 @@ public class MagpieRunner2
 	/**
 	 * Create a Magpie, give it user input, and print its replies.
 	 */
+	
 	public static void main(String[] args)
 	{
 		
+		Magpie2 maggie = new Magpie2();
+		Scanner in = new Scanner(System.in);
 		
 		System.out.println (maggie.getGreeting());		
 
 
 		String statement = in.nextLine();
 		
-		while (!statement.equals("Bye"))
+		while (!statement.equals("Bye!"))
 		{
 			System.out.println (maggie.getResponse(statement));
+			if (maggie.getResponse(statement) == "Bye!") System.exit(0);
 			statement = in.nextLine();
 		}
 	}

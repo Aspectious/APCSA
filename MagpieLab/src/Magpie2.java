@@ -35,12 +35,37 @@ public class Magpie2
 		{
 			response = "Why so negative?";
 		}
+		else if ((statement.indexOf("dog") >= 0 )||(statement.indexOf("cat") >= 0)) {
+			response = "Tell me more about your pets.";
+		}
+		else if (statement.toLowerCase().indexOf("dr") >= 0 ) {
+			response = "They sound like a good Teacher.";
+		}
+		else if (statement.toLowerCase().indexOf("mr") >= 0 ) {
+			response = "He sounds like a good Teacher.";
+		}
+		else if (statement.toLowerCase().indexOf("ms") >= 0) {
+			response = "She sounds like a good Teacher.";
+		}
 		else if (statement.indexOf("mother") >= 0
 				|| statement.indexOf("father") >= 0
 				|| statement.indexOf("sister") >= 0
 				|| statement.indexOf("brother") >= 0)
 		{
 			response = "Tell me more about your family.";
+		}
+		else if (statement.toLowerCase().indexOf("hello") >= 0) {
+			response = "Hello! How are you?";
+		}
+		else if (statement.toLowerCase().indexOf("i am") >= 0
+				|| statement.toLowerCase().indexOf("i feel") >= 0) {
+			response = "Well that is good to hear.";
+		}
+		else if (statement.toLowerCase().indexOf("bye") >= 0 ) {
+			response = "Bye!";
+		}
+		else if (statement.trim() == "" ) {
+			response = "Say something, please.";
 		}
 		else
 		{
