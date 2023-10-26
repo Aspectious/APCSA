@@ -19,7 +19,7 @@ public class MagpieRunner3
 
 		// findKeworld Calls
 		
-		
+		System.out.println(maggie.findKeyword("yesterday is today's day before.", "day", 0));
 		
 		System.out.println (maggie.getGreeting());
 		String statement = in.nextLine();
