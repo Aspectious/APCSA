@@ -20,13 +20,17 @@ class Fraction
       numerator = initNumerator;
       denominator = initDenominator;
    }
+   
+   public String eval() {
+	   return numerator + "/" + denominator;
+   }
 
    public String toString()
    {
      // if the denominator is 1, then just return the numerator
-     if (denominator == d) {
-        int newNumerator = 1;
+     if (denominator == 1) {
+    	 return numerator + "";
      }
-     return newNumerator + "/" + denominator;
+     return numerator + "/" + denominator;
    }
 }

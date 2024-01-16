@@ -22,7 +22,7 @@ public class ArrayLoop
    public static void main(String[] args)
    {
      int[] numArray =  {2, 6, 7, 12, 5};
-     multAll(numArray, 2);
+     multAll(numArray,2);
      printValues(numArray);
    }
 }

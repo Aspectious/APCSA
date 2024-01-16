@@ -11,7 +11,7 @@ public class Average {
     number = scan.nextInt();
 
     // 2. test the loop variable (against sentinel value)
-    while () {
+    while (number != -1) {
       sum += number; // add number to sum
       count++; // count the number
       // 3. Change the loop variable (get a new number)

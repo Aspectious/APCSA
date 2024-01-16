@@ -6,8 +6,20 @@ public class SpellChecker
       private String[] dictionary = new String[127143];
       
       // WRITE Your Methods HERE!
-
-
+      // Checks spelling for words
+      public boolean spellcheck(String word) {
+    	  for (String w:dictionary) {
+    		  if (w.equals(word)) return true;
+    	  }
+    	  return false;
+      }
+      
+      // Prints out all possible words that start with the query
+      public void printStartsWith(String query) {
+    	  for (String w:dictionary) {
+    		  if (w.startsWith(query)) System.out.println(w);
+    	  }
+      }
 
 
 

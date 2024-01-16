@@ -13,10 +13,6 @@ public class StringWorker
        {
          return index;
        }
-       else
-       {
-         return -1;
-       }
      }
      return -1;
    }

@@ -17,9 +17,23 @@ public class ArrayWorker
      }
    }
 
-   /** Write a method called tripleFirstFour() that triples the first 4 elements of the array **/
+   /** Write a method called tripleFirstFour() that triples the first 4 elements of the array 
+ * @return **/
+   public void tripleFirstFour() {
+	// Notice: && i < 5
+	     for (int i = 0; i < values.length && i < 4; i++)
+	     {
+	       values[i] = values[i] * 3;
+	     }
+   }
 
-
+   public void quadrupleFirstThree() {
+		// Notice: && i < 5
+		     for (int i = 0; i < values.length && i < 3; i++)
+		     {
+		       values[i] = values[i] * 4;
+		     }
+	   }
 
    public void printArray()
    {
@@ -34,6 +48,8 @@ public class ArrayWorker
      int[] numArray = {3, 8, -3, 2, 20, 5, 33, 1};
      ArrayWorker worker = new ArrayWorker(numArray);
      worker.doubleFirstFive();
+     worker.tripleFirstFour();
+     worker.quadrupleFirstThree();
      worker.printArray();
    }
 }

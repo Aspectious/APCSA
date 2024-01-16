@@ -1,0 +1,225 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 264241152 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3528), pid=7484, tid=1836
+#
+# JRE version:  (20.0.2+9) (build )
+# Java VM: OpenJDK 64-Bit Server VM (20.0.2+9, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dfile.encoding=windows-1252 -Dstdout.encoding=windows-1252 -Dstderr.encoding=windows-1252 -XX:+ShowCodeDetailsInExceptionMessages TurtleDrawShapes
+
+Host: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz, 8 cores, 15G,  Windows 11 , 64 bit Build 22621 (10.0.22621.2428)
+Time: Fri Nov  3 12:39:21 2023 Eastern Daylight Time elapsed time: 0.012652 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001f95b8f8120):  JavaThread "Unknown thread" [_thread_in_vm, id=1836, stack(0x00000064df300000,0x00000064df400000)]
+
+Stack: [0x00000064df300000,0x00000064df400000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6c4a1a]
+V  [jvm.dll+0x8a341c]
+V  [jvm.dll+0x8a5025]
+V  [jvm.dll+0x8a5723]
+V  [jvm.dll+0x284aff]
+V  [jvm.dll+0x6c1799]
+V  [jvm.dll+0x6b627a]
+V  [jvm.dll+0x360e2d]
+V  [jvm.dll+0x368fa6]
+V  [jvm.dll+0x3b9f0e]
+V  [jvm.dll+0x3ba185]
+V  [jvm.dll+0x33142a]
+V  [jvm.dll+0x33223b]
+V  [jvm.dll+0x86bd0f]
+V  [jvm.dll+0x3c7191]
+V  [jvm.dll+0x857a96]
+V  [jvm.dll+0x452b9f]
+V  [jvm.dll+0x454681]
+C  [jli.dll+0x528f]
+C  [ucrtbase.dll+0x29363]
+C  [KERNEL32.DLL+0x1257d]
+C  [ntdll.dll+0x5aa78]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007fff2791a5d8, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000001f95b96a1b0 WorkerThread "GC Thread#0" [stack: 0x00000064df400000,0x00000064df500000] [id=8608]
+  0x000001f95b97ad40 ConcurrentGCThread "G1 Main Marker" [stack: 0x00000064df500000,0x00000064df600000] [id=2980]
+  0x000001f95b97c0b0 WorkerThread "G1 Conc#0" [stack: 0x00000064df600000,0x00000064df700000] [id=27744]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007fff27094a07]
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000001f95b8f5680] Heap_lock - owner thread: 0x000001f95b8f8120
+
+Heap address: 0x0000000704000000, size: 4032 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 4 size 8 Array Of Cards #cards 16 size 48 Howl #buckets 8 coarsen threshold 3686 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 4096
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000704000000, 0x0000000800000000)
+  region size 2048K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007fff2746de19]
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.008 Loaded shared library C:\Users\griff\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_20.0.2.v20230801-2057\jre\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff766ff0000 - 0x00007ff766ffe000 	C:\Users\griff\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_20.0.2.v20230801-2057\jre\bin\javaw.exe
+0x00007fff86dd0000 - 0x00007fff86fe7000 	C:\windows\SYSTEM32\ntdll.dll
+0x00007fff855b0000 - 0x00007fff85674000 	C:\windows\System32\KERNEL32.DLL
+0x00007fff84150000 - 0x00007fff844f6000 	C:\windows\System32\KERNELBASE.dll
+0x00007fff84a10000 - 0x00007fff84b21000 	C:\windows\System32\ucrtbase.dll
+0x00007fff65450000 - 0x00007fff6546b000 	C:\Users\griff\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_20.0.2.v20230801-2057\jre\bin\VCRUNTIME140.dll
+0x00007fff68b30000 - 0x00007fff68b47000 	C:\Users\griff\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_20.0.2.v20230801-2057\jre\bin\jli.dll
+0x00007fff85780000 - 0x00007fff8592d000 	C:\windows\System32\USER32.dll
+0x00007fff84970000 - 0x00007fff84996000 	C:\windows\System32\win32u.dll
+0x00007fff6c140000 - 0x00007fff6c3d3000 	C:\windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.2361_none_2712ced57382f843\COMCTL32.dll
+0x00007fff85490000 - 0x00007fff854b9000 	C:\windows\System32\GDI32.dll
+0x00007fff863f0000 - 0x00007fff86497000 	C:\windows\System32\msvcrt.dll
+0x00007fff84500000 - 0x00007fff84618000 	C:\windows\System32\gdi32full.dll
+0x00007fff848d0000 - 0x00007fff8496a000 	C:\windows\System32\msvcp_win.dll
+0x00007fff863b0000 - 0x00007fff863e1000 	C:\windows\System32\IMM32.DLL
+0x00007fff68b20000 - 0x00007fff68b2c000 	C:\Users\griff\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_20.0.2.v20230801-2057\jre\bin\vcruntime140_1.dll
+0x00007fff35240000 - 0x00007fff352cd000 	C:\Users\griff\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_20.0.2.v20230801-2057\jre\bin\msvcp140.dll
+0x00007fff26d50000 - 0x00007fff27a5f000 	C:\Users\griff\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_20.0.2.v20230801-2057\jre\bin\server\jvm.dll
+0x00007fff86730000 - 0x00007fff867e0000 	C:\windows\System32\ADVAPI32.dll
+0x00007fff86140000 - 0x00007fff861e6000 	C:\windows\System32\sechost.dll
+0x00007fff85db0000 - 0x00007fff85ec7000 	C:\windows\System32\RPCRT4.dll
+0x00007fff7aa30000 - 0x00007fff7aa64000 	C:\windows\SYSTEM32\WINMM.dll
+0x00007fff50570000 - 0x00007fff50579000 	C:\windows\SYSTEM32\WSOCK32.dll
+0x00007fff7a890000 - 0x00007fff7a89a000 	C:\windows\SYSTEM32\VERSION.dll
+0x00007fff86980000 - 0x00007fff869f1000 	C:\windows\System32\WS2_32.dll
+0x00007fff830f0000 - 0x00007fff83108000 	C:\windows\SYSTEM32\kernel.appcore.dll
+0x00007fff7e610000 - 0x00007fff7e61a000 	C:\Users\griff\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_20.0.2.v20230801-2057\jre\bin\jimage.dll
+0x00007fff819f0000 - 0x00007fff81c1e000 	C:\windows\SYSTEM32\DBGHELP.DLL
+0x00007fff86a00000 - 0x00007fff86d8a000 	C:\windows\System32\combase.dll
+0x00007fff862d0000 - 0x00007fff863a7000 	C:\windows\System32\OLEAUT32.dll
+0x00007fff629e0000 - 0x00007fff62a12000 	C:\windows\SYSTEM32\dbgcore.DLL
+0x00007fff84620000 - 0x00007fff8469a000 	C:\windows\System32\bcryptPrimitives.dll
+0x00007fff2bba0000 - 0x00007fff2bbc6000 	C:\Users\griff\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_20.0.2.v20230801-2057\jre\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\griff\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_20.0.2.v20230801-2057\jre\bin;C:\windows\SYSTEM32;C:\windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.2361_none_2712ced57382f843;C:\Users\griff\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_20.0.2.v20230801-2057\jre\bin\server
+
+VM Arguments:
+jvm_args: -Dfile.encoding=windows-1252 -Dstdout.encoding=windows-1252 -Dstderr.encoding=windows-1252 -XX:+ShowCodeDetailsInExceptionMessages 
+java_command: TurtleDrawShapes
+java_class_path (initial): C:\Users\griff\dev\2\apcsa\Lesson 4.2(3)\bin;C:\Users\griff\Downloads\Turtle.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 2097152                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 264241152                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 4227858432                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 2097152                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5839372                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122909434                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122909434                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool ShowCodeDetailsInExceptionMessages       = true                                   {manageable} {command line}
+   size_t SoftMaxHeapSize                          = 4227858432                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+PATH=C:/Users/griff/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_20.0.2.v20230801-2057/jre/bin/server;C:/Users/griff/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_20.0.2.v20230801-2057/jre/bin;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk-20.0.2\bin;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\Users\griff\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\griff\AppData\Local\Programs\Python\Python311\;C:\Users\griff\AppData\Local\Microsoft\WindowsApps;C:\Users\griff\.dotnet\tools;C:\Users\griff\AppData\Roaming\npm;C:\Users\griff\AppData\Local\Microsoft\WinGet\Links;C:\Program Files\Java\jdk-20.0.2\bin;;C:\Users\griff\eclipse\java-2023-03\eclipse;
+USERNAME=griffin
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 140 Stepping 1, GenuineIntel
+TMP=C:\Users\griff\AppData\Local\Temp
+TEMP=C:\Users\griff\AppData\Local\Temp
+
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 22621 (10.0.22621.2428)
+OS uptime: 0 days 1:15 hours
+Hyper-V role detected
+
+CPU: total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 140 stepping 1 microcode 0xac, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, avx512f, avx512dq, avx512cd, avx512bw, avx512vl, sha, fma, vzeroupper, avx512_vpopcntdq, avx512_vpclmulqdq, avx512_vaes, avx512_vnni, clflush, clflushopt, clwb, avx512_vbmi2, avx512_vbmi, hv, rdtscp, rdpid, fsrm, gfni, avx512_bitalg, f16c, cet_ibt, cet_ss, avx512_ifma
+
+Memory: 4k page, system-wide physical 16126M (594M free)
+TotalPageFile size 42524M (AvailPageFile size 18M)
+current process WorkingSet (physical memory assigned to process): 11M, peak: 11M
+current process commit charge ("private bytes"): 60M, peak: 312M
+
+vm_info: OpenJDK 64-Bit Server VM (20.0.2+9) for windows-amd64 JRE (20.0.2+9), built on 2023-07-18T00:00:00Z by "admin" with MS VC++ 16.10 / 16.11 (VS2019)
+
+END.

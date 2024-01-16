@@ -1,12 +1,11 @@
-import java.util.Scanner;
 import java.io.File;
-import java.util.HashMap;
 import java.util.ArrayList;
-import java.io.*;
+import java.util.HashMap;
+import java.util.Scanner;
 
 /**
  * Class that contains helper methods for the Review Lab
- **/
+ u**/
 public class Review {
   
   private static HashMap<String, Double> sentiment = new HashMap<String, Double>();
@@ -168,11 +167,56 @@ public class Review {
     }
   }
   
+  public static void main(String args[]) {
+	  String file = "SimpleReview.txt";
+	  //double val = totalSentiment(file);
+	  //System.out.println(val);
+	  System.out.println(fakeReview(file));
+  }
 
+  public static double totalSentiment(String fileName) {
+	  String format = textToString(fileName).toLowerCase().replaceAll("[^a-zA-Z0-9_'\n]"," ");
+	  double sentiment = 0;
+	  int wordstartindex = 0;
+	  for (int i=1; i<format.length(); i++) {
+		  if(format.substring(i-1, i).equals(" ")) {
+			  String word = format.substring(wordstartindex,i-1);
+			  double tempsentiment = sentimentVal(word);
+			  System.out.println(tempsentiment + "	" + word);
+			  sentiment += tempsentiment;
+			  wordstartindex = i;
+		  }
+	  }
+	  return sentiment;
+  }
   
   
-  
-  
-  
+  public static int starRating(String fileName) {
+	  double sentiment = totalSentiment(fileName);
+	  int stars= 0;
+	  if (sentiment <= 0) stars = 1;
+	  else if (sentiment <= 10) stars = 2;
+	  else if (sentiment <= 20) stars = 3;
+	  else if (sentiment <= 30) stars = 4;
+	  else if (sentiment > 30) stars = 5;
+	  return stars;
+  }
+  public static String fakeReview(String filename) {
+	  String format = textToString(filename).toLowerCase().replaceAll("[^a-zA-Z0-9_*]"," ");
+	  int wordstartindex = 0;
+	  String finale = "";
+	  for (int i=1; i<format.length(); i++) {
+		  if(format.substring(i-1, i).equals(" ")) {
+			  String word = format.substring(wordstartindex,i-1);
+			  if (word.startsWith("*")) {
+				  word = randomAdjective().toUpperCase();
+			  }
+			  finale += word + " ";
+			  wordstartindex = i;
+		  }
+	  }
+	  return finale;
+  }
+}
   
   

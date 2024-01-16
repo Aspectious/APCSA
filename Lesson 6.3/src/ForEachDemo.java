@@ -2,8 +2,8 @@ public class ForEachDemo
 {
    public static void main(String[] args)
    {
-     int[] highScores = { 10, 9, 8, 8};
-     String[] names = {"Jamal", "Emily", "Destiny", "Mateo"};
+     int[] highScores = { 10, 9, 8, 8,14};
+     String[] names = {"Jamal", "Emily", "Destiny", "Mateo","Jeff"};
      // for each loop with an int array
      for (int value : highScores)
      {

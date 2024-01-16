@@ -9,5 +9,7 @@ public class TurtlePreconditions
       // Change 0,0 to other values outside of 0-300 to break the preconditions and see what happens
       Turtle t = new Turtle(0,0,world);
       t.turnRight();
+      t.forward(5489594594375934798548356743);
+     
   }
 }
