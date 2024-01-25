@@ -4,7 +4,7 @@ public class ListGetSet
    public static void main(String[] args)
    {
        ArrayList<String> nameList = new ArrayList<String>();
-       nameList.add("Diego");
+       nameList.add("Griffin");
        nameList.add("Grace");
        nameList.add("Deja");
        System.out.println(nameList);
@@ -12,5 +12,6 @@ public class ListGetSet
        System.out.println(nameList.get(1));
        nameList.set(1, "John");
        System.out.println(nameList);
+       System.out.println(nameList.get(nameList.size()-1));
    }
 }

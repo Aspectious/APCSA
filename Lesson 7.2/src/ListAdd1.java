@@ -8,8 +8,13 @@ public class ListAdd1
        System.out.println(nameList);
        nameList.add("Grace");
        System.out.println(nameList);
-       nameList.add("Diego");
+       nameList.add("Liego");
        System.out.println(nameList);
+       // edits//
+       nameList.add("Griffin");
+       System.out.println(nameList);
+       
+       
        System.out.println(nameList.size());
    }
 }

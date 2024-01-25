@@ -4,9 +4,14 @@ import java.awt.image.BufferedImage;
 import java.io.*;
 import javax.imageio.ImageIO;
 
+import com.aspectious.NeuralNetz.network.*;
+
 public class Main {
+	public static NetworkMGR Network;
+	
 	public static void main(String[] args) {
-		readImage("./ref/eight-1.png");
+		double[] values = readImage("./ref/eight-1.png");
+		setup();
 		
 	}
 	
@@ -33,7 +38,8 @@ public class Main {
 			6,6,6,
 			7,7,7,
 			8,8,8,
-			9,9,9}
+			9,9,9
+			};
 	
 	
 	public static double[] readImage(String path) {
@@ -63,10 +69,11 @@ public class Main {
 		return values;
 	}
 	public static void setup() {
-		Nlayer inputLayer = new Nlayer(1024,0.0f);
+		Nlayer inputLayer = new Nlayer(1024);
 		Nlayer hiddenLayer1 = new Nlayer(32);
 		Nlayer hiddenLayer2 = new Nlayer(16);
-		Nlayer outputLayer = new Nlayer(10,0.0f);
+		Nlayer outputLayer = new Nlayer(10,0.0f,true);
 		
+		Network = new NetworkMGR(inputLayer, new Nlayer[] {hiddenLayer1, hiddenLayer2}, outputLayer);
 	}
 }

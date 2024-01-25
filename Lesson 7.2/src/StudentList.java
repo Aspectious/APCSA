@@ -8,7 +8,7 @@ public class StudentList
        ArrayList<Student> roster = new ArrayList<Student>();
        roster.add(new Student("Skyler", "skyler@sky.com", 123456));
        roster.add(new Student("Ayanna", "ayanna@gmail.com", 789012));
-
+       roster.add(new Student("Walter", "wwhite@outlook.com", 8675309));
        System.out.println(roster);
    }
  }

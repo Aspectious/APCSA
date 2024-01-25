@@ -1,4 +1,4 @@
-package com.aspectious.NeuralNetz;
+package com.aspectious.NeuralNetz.network;
 
 public class Nlink {
 	private float weight;
