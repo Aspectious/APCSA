@@ -1,4 +1,4 @@
-package com.aspectious.NeuralNetz.network;
+package dev.aspectious.NeuralNetz;
 
 public class Neuron {
 	private float value;

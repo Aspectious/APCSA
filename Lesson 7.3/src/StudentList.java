@@ -9,7 +9,9 @@ public class StudentList
        roster.add(new Student("Skyler", "skyler@sky.com", 123456));
        roster.add(new Student("Ayanna", "ayanna@gmail.com", 789012));
        // Replace this with a for each loop that prints out each student on a separate line
-       System.out.println(roster);
+       for (Student stu : roster) {
+    	   System.out.println(stu);
+       }
    }
  }
 

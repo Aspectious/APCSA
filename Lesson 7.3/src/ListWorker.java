@@ -1,4 +1,4 @@
-import java.util.*;
+0import java.util.*;
 public class ListWorker
 {
    private ArrayList<String> nameList;
@@ -10,14 +10,14 @@ public class ListWorker
 
    public boolean removeName(String name)
    {
-       boolean found =   // true or false?
+       boolean found = false;  // true or false?
        int index = 0;
        while (index < nameList.size())
        {
            if (name.equals(nameList.get(index)))
            {
                nameList.remove(index);
-               found =    // true or false?
+               found = true;   // true or false?
            }
            else index++;
        }

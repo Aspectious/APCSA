@@ -1,18 +1,18 @@
-package com.aspectious.NeuralNetz;
+package dev.aspectious.NeuralNetz;
 
 import java.awt.image.BufferedImage;
 import java.io.*;
 import javax.imageio.ImageIO;
 
-import com.aspectious.NeuralNetz.network.*;
-
 public class Main {
 	public static NetworkMGR Network;
 	
 	public static void main(String[] args) {
+		System.out.println("[INFO] Starting Application...");
 		double[] values = readImage("./ref/eight-1.png");
 		setup();
-		
+		cli.attachScannerToSTIN();
+		double[] out = Network.runCycle(values);
 	}
 	
 	
@@ -69,11 +69,27 @@ public class Main {
 		return values;
 	}
 	public static void setup() {
-		Nlayer inputLayer = new Nlayer(1024);
-		Nlayer hiddenLayer1 = new Nlayer(32);
-		Nlayer hiddenLayer2 = new Nlayer(16);
-		Nlayer outputLayer = new Nlayer(10,0.0f,true);
+		Nlayer[] layers;
+		Nlayer inputLayer, hiddenLayer1, hiddenLayer2, outputLayer;
+		try {
+			layers = Storage.loadFile("dev.nnet");
+			inputLayer = layers[0];
+			hiddenLayer1 = layers[1];
+			hiddenLayer2 = layers[2];
+			outputLayer = new Nlayer(10);
+			Network = new NetworkMGR(inputLayer, new Nlayer[] {hiddenLayer1, hiddenLayer2}, outputLayer, true);
+		} catch (Exception e) {
+			throw e;
+			/*
+			inputLayer = new Nlayer(1024);
+			hiddenLayer1 = new Nlayer(32);
+			hiddenLayer2 = new Nlayer(16);
+			outputLayer = new Nlayer(10);
+			Network = new NetworkMGR(inputLayer, new Nlayer[] {hiddenLayer1, hiddenLayer2}, outputLayer, false);
+			*/
+		}
 		
-		Network = new NetworkMGR(inputLayer, new Nlayer[] {hiddenLayer1, hiddenLayer2}, outputLayer);
+		
+		
 	}
 }

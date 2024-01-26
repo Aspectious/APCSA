@@ -22,6 +22,5 @@ public class Test1
         }
         System.out.println("Product of all elements: " + product);
 
-
     }
 }

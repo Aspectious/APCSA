@@ -8,7 +8,7 @@ public class TestForLoop
         myList.add(30);
         myList.add(20);
         int total = 0;
-        for (int i=0; i <= myList.size(); i++)
+        for (int i=0; i < myList.size(); i++)
         {
             total = total + myList.get(i);
         }
