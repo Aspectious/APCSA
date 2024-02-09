@@ -50,8 +50,10 @@ public class SpellChecker
   public boolean binarySpellCheck(String word) {
         int left = 0;
         int right = dictionary.size() - 1;
+        int count =0;
         while (left <= right)
         {
+        	count++;
            int middle = (left + right) / 2;
            if (word.compareTo(dictionary.get(middle)) < 0)
            {
@@ -62,9 +64,11 @@ public class SpellChecker
               left = middle + 1;
            }
            else {
+        	   System.out.println("Runtime: " + count);
               return true;
            }
          }
+        System.out.println("Runtime: " + count);
          return false;
      }
 
