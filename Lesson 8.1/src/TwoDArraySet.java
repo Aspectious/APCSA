@@ -1,5 +1,23 @@
 public class TwoDArraySet
 {
+	public static void print2dStr(String[][] arr) {
+		for (int i=0; i<arr.length; i++) {
+			String stor = "";
+			for (int j=0; j<arr[i].length; j++) {
+				stor += arr[i][j] + " ";
+			}
+			System.out.println(stor);
+		}
+	}
+	public static void print2dInt(int[][] arr) {
+		for (int i=0; i<arr.length; i++) {
+			String stor = "";
+			for (int j=0; j<arr[i].length; j++) {
+				stor += arr[i][j] + " ";
+			}
+			System.out.println(stor);
+		}
+	}
    public static void main(String[] args)
    {
       // declare arrays
@@ -24,8 +42,11 @@ public class TwoDArraySet
       seatingChart[2][0] = "Emma";
       seatingChart[2][1] = "Luke";
 
+
       // print the contents
-      System.out.println(ticketInfo);
-      System.out.println(seatingChart);
+      print2dInt(ticketInfo);
+      System.out.println();
+      print2dStr(seatingChart);
+      
    }
 }

@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="LaunchTerminalSettingsDialog">
-		<item key="terminalLabel" value="Local Terminal"/>
+		<item key="terminalLabel" value="pwsh"/>
 		<section name="SettingsPanelControl">
 			<section name="Git Bash">
+				<item key="encoding" value="UTF-8"/>
 			</section>
 			<section name="Local Terminal">
+				<item key="encoding" value="UTF-8"/>
+			</section>
+			<section name="pwsh">
 				<item key="encoding" value="UTF-8"/>
 			</section>
 		</section>

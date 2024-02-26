@@ -14,5 +14,4 @@ public class PictureTester
 		    Picture p = new Picture("arch.jpg");
 		    PictureExplorer exp = new PictureExplorer(p);
 		  }
-		
 }
