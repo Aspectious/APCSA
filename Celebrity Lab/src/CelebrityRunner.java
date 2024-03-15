@@ -11,6 +11,8 @@ public class CelebrityRunner
 	 */
 	public static void main(String [] args)
 	{
-
+		CelebrityGame game = new CelebrityGame();
+		game.addCelebrity("Linus Sebastian", "Cool guy who does tech videos on yt", "Internet Celebrity");
+		game.play();
 	}
 }

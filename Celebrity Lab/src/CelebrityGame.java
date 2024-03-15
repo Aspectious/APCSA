@@ -11,20 +11,25 @@ public class CelebrityGame
 	/**
 	 * A reference to a Celebrity or subclass instance.
 	 */
+	private Celebrity gameCelebrity;
 
 	/**
 	 * The GUI frame for the Celebrity game.
 	 */
-
+	private CelebrityFrame gameWindow;
+	
 	/**
 	 * The ArrayList of Celebrity values that make up the game
 	 */
+	private ArrayList<Celebrity> celebs;
 
 	/**
 	 * Builds the game and starts the GUI
 	 */
 	public CelebrityGame()
 	{
+		 celebs = new ArrayList<Celebrity>();
+		 gameWindow = new CelebrityFrame(this);
 	}
 
 	/**
@@ -32,6 +37,9 @@ public class CelebrityGame
 	 */
 	public void prepareGame()
 	{
+		 celebs = new ArrayList<Celebrity>();
+		 gameWindow.replaceScreen("START");
+		 
 	}
 
 	/**
@@ -44,7 +52,9 @@ public class CelebrityGame
 	 */
 	public boolean processGuess(String guess)
 	{
-		return false;
+		if (guess.toLowerCase().equals(gameCelebrity.getAnswer().toLowerCase())) {
+			return true;
+		} else return false;
 	}
 
 	/**
@@ -54,7 +64,10 @@ public class CelebrityGame
 	 */
 	public void play()
 	{
-		
+		if ((celebs != null) && (celebs.size() >0)) {
+			this.gameCelebrity = celebs.get(0);
+			gameWindow.replaceScreen("GAME");
+		}
 	}
 
 	/**
@@ -69,7 +82,8 @@ public class CelebrityGame
 	 */
 	public void addCelebrity(String name, String guess, String type)
 	{
-		
+		Celebrity cel = new Celebrity(name, guess);
+		celebs.add(cel);
 	}
 
 	/**
@@ -79,7 +93,8 @@ public class CelebrityGame
 	 */
 	public boolean validateCelebrity(String name)
 	{
-		return false;
+		if (name.length() >= 4) return true;
+		else return false;
 	}
 
 	/**
@@ -91,7 +106,8 @@ public class CelebrityGame
 	 */
 	public boolean validateClue(String clue, String type)
 	{
-		return false;
+		if (clue.length() >= 10) return true;
+		else return false;
 	}
 
 	/**
@@ -112,7 +128,7 @@ public class CelebrityGame
 	 */
 	public String sendClue()
 	{
-		return null;
+		return gameCelebrity.getClue();
 	}
 
 	/**
@@ -123,6 +139,6 @@ public class CelebrityGame
 	 */
 	public String sendAnswer()
 	{
-		return null;
+		return gameCelebrity.getAnswer();
 	}
 }
