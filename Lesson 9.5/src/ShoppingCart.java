@@ -23,9 +23,16 @@ class ShoppingCart
     /** printOrder() will call toString() to print */
     public void printOrder()
     {
+    	System.out.println("Count " + countDiscountedItems());
         System.out.println(this);
     }
-
+    public int countDiscountedItems() {
+    	int count = 0;
+    	for (Item i: this.order) {
+    		if (i instanceof DiscountedItem) count++;
+    	}
+    	return count;
+    } 
     public String toString()
     {
         return discountToString();

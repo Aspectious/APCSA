@@ -6,13 +6,12 @@ public class PetRunner {
         System.out.println(p.getType());
         p.speak();
 
-       /* Dog d = new Dog("Fido");
+       Dog d = new Dog("Fido");
         System.out.println(d.getType());
         d.speak();
         Cat c = new Cat("Fluffy");
         System.out.println(c.getType());
         c.speak();
-        */
     }
  
 }

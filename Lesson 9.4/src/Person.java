@@ -14,7 +14,7 @@ public class Person
 
     public static void main(String[] args)
     {
-        Person p = new Student("Javier");
+        Person p = new Vegan("Javier");
         System.out.println(p.getFood());
     }
 }

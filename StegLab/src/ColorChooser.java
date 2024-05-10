@@ -30,7 +30,7 @@ public class ColorChooser {
       color = JColorChooser.showDialog(frame, "Pick a color", color);
 
       return color;
-   }
+   }       
 
    /**
     * Main method for testing the ColorChooser

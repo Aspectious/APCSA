@@ -53,7 +53,7 @@ public class CelebrityGame
 	public boolean processGuess(String guess)
 	{
 		if (guess.toLowerCase().equals(gameCelebrity.getAnswer().toLowerCase())) {
-			return true;
+			return true;		
 		} else return false;
 	}
 

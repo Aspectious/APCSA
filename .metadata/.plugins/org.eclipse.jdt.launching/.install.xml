@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <dirs>
     <entry loc="C:\Users\GDSIEB01\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.7.v20230425-1502\jre" stamp="1697644411435"/>
+    <entry loc="C:\Users\GDSIEB01\AppData\java\openjdk\jdk-21.0.2\bin" stamp="1715355342570"/>
     <entry loc="C:\Users\GDSIEB01\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.7.v20230425-1502" stamp="1697644411720"/>
     <entry loc="C:\Users\griff\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_20.0.2.v20230801-2057" stamp="1697126041239"/>
     <entry loc="C:\Users\griff\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_20.0.2.v20230801-2057\jre" stamp="1697126041238"/>
     <entry loc="C:\Users\bortma1\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_16.0.2.v20210721-1149" stamp="1633543350775"/>
+    <entry loc="C:\Users\GDSIEB01\AppData\java\openjdk\jdk-21.0.2" stamp="1715355354514"/>
     <entry loc="C:\Users\bortma1\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_16.0.2.v20210721-1149\jre" stamp="1633543350736"/>
 </dirs>
