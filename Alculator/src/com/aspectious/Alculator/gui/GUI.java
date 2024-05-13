@@ -65,6 +65,15 @@ public class GUI {
 					if (i==0 && j==0) {
 						button.setText("del");
 						button.setPreferredSize(new Dimension(125,30));
+						
+						
+						button.addActionListener(e -> {
+							String newText = inputBox.getText();
+							if (newText.length()>0) {
+								inputBox.setText(newText.substring(0,newText.length()-1));
+							}
+							
+						});
 					}
 					if (i==0 && j==1) {
 						button.setText("del");
@@ -74,6 +83,7 @@ public class GUI {
 					}
 					else if (i==0 && j==3) {
 						button.setText("+");
+						button.addActionListener(e -> inputBox.setText(inputBox.getText() + "+"));
 					}
 					
 					
@@ -81,59 +91,73 @@ public class GUI {
 					
 					else if (i==1 && j==0) {
 						button.setText("7");
+						button.addActionListener(e -> inputBox.setText(inputBox.getText() + "7"));
 					}
 					else if (i==1 && j==1) {
 						button.setText("8");
+						button.addActionListener(e -> inputBox.setText(inputBox.getText() + "8"));
 					}
 					else if (i==1 && j==2) {
 						button.setText("9");
+						button.addActionListener(e -> inputBox.setText(inputBox.getText() + "9"));
 					}
 					else if (i==1 && j==3) {
 						button.setText("-");
+						button.addActionListener(e -> inputBox.setText(inputBox.getText() + "-"));
 					}
 					
 					
 					
 					else if (i==2 && j==0) {
 						button.setText("4");
+						button.addActionListener(e -> inputBox.setText(inputBox.getText() + "4"));
 					}
 					else if (i==2 && j==1) {
 						button.setText("5");
+						button.addActionListener(e -> inputBox.setText(inputBox.getText() + "5"));
 					}
 					else if (i==2 && j==2) {
 						button.setText("6");
+						button.addActionListener(e -> inputBox.setText(inputBox.getText() + "6"));
 					}
 					else if (i==2 && j==3) {
 						button.setText("*");
+						button.addActionListener(e -> inputBox.setText(inputBox.getText() + "*"));
 					}
 					
 					
 					
 					else if (i==3 && j==0) {
 						button.setText("1");
+						button.addActionListener(e -> inputBox.setText(inputBox.getText() + "1"));
 					}
 					else if (i==3 && j==1) {
 						button.setText("2");
+						button.addActionListener(e -> inputBox.setText(inputBox.getText() + "2"));
 					}
 					else if (i==3 && j==2) {
 						button.setText("3");
+						button.addActionListener(e -> inputBox.setText(inputBox.getText() + "3"));
 					}
 					else if (i==3 && j==3) {
 						button.setText("/");
+						button.addActionListener(e -> inputBox.setText(inputBox.getText() + "/"));
 					}
 					
 					else if (i==4 && j==0) {
 						button.setText("0");
-						button.setPreferredSize(new Dimension(125,30));
+						button.setPreferredSize(new Dimension(190,30));
+						button.addActionListener(e -> inputBox.setText(inputBox.getText() + "0"));
 					}
 					else if (i==4 && j==2) {
 						button.setText(".");
+						button.addActionListener(e -> inputBox.setText(inputBox.getText() + "."));
 					}
 					else if (i==4 && j==3) {
 						button.setText("=");
 					}
 					
-					if ((i==4 && j==1)||(i==0 && j==1)) {
+					if ((i==4 && j==1)||(i==4 && j==2)||(i==0 && j==1)) {
 						button = null;
 					} else {
 						panel.add(button);
