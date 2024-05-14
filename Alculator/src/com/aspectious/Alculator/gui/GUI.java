@@ -2,11 +2,16 @@ package com.aspectious.Alculator.gui;
 import java.awt.*;
 
 import javax.swing.*;
+import javax.swing.text.*;
+
+import com.aspectious.Alculator.meth;
 
 public class GUI {
 	private JFrame window;
 	
 	private JPanel mainPanel;
+	
+	DefaultListModel listModel = new DefaultListModel();
 	private JList historyList;
 	private JTextField inputBox;
 	
@@ -22,21 +27,36 @@ public class GUI {
 		window.setTitle("Alculator");
 		
 		setup();
+		ImageIcon img = new ImageIcon("./Alculator.png");
+		window.setIconImage(img.getImage());
 		window.setResizable(false);
 		window.setVisible(true);
 		window.setAlwaysOnTop(true);
 	}
-	
+	public void sendMeth() {
+		String formulae = inputBox.getText();
+		boolean isCalc = meth.checkIfCalculable(formulae);
+		if (isCalc) {
+			double answer = meth.calculate(formulae);
+			listModel.add(0,inputBox.getText() + " = " + answer);
+			inputBox.setText("");
+		} else {
+			JOptionPane.showMessageDialog(window, "Invalid input - Please try a valid equation","Error",0);
+		}
+	}
 	public void setup() {
 		mainPanel = new JPanel();
 		textBoxsPanel = new JPanel();
 		buttonPanelList = new JPanel[5];
-		Object[] data = new Object[1];
-		historyList = new JList(data);
+		historyList = new JList(listModel);
 		historyList.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 		historyList.setLayoutOrientation(JList.VERTICAL);
 		historyList.setVisibleRowCount(3);
 		inputBox = new JTextField(20);
+		((AbstractDocument)inputBox.getDocument()).setDocumentFilter(new InputFilter());
+		inputBox.addActionListener(e -> {sendMeth();});
+		
+		
 		buttonPanel = new JPanel();
 		buttonArray = new JButton[buttonPanelList.length][4];
 		for (int i=0; i<buttonArray.length; i++) {
@@ -79,7 +99,8 @@ public class GUI {
 						button.setText("del");
 					}
 					else if (i==0 && j==2) {
-						button.setText("+/-");
+						button.setText("C");
+						button.addActionListener(e -> inputBox.setText(""));
 					}
 					else if (i==0 && j==3) {
 						button.setText("+");
@@ -155,6 +176,7 @@ public class GUI {
 					}
 					else if (i==4 && j==3) {
 						button.setText("=");
+						button.addActionListener(e -> sendMeth());
 					}
 					
 					if ((i==4 && j==1)||(i==4 && j==2)||(i==0 && j==1)) {

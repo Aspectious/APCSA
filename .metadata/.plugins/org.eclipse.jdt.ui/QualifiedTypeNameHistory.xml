@@ -5,4 +5,9 @@
     <fullyQualifiedTypeName name="com.aspectious.Alculator.gui.GUI"/>
     <fullyQualifiedTypeName name="javax.swing.JButton"/>
     <fullyQualifiedTypeName name="java.awt.BorderLayout"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.lang.Double"/>
+    <fullyQualifiedTypeName name="java.text.Format"/>
+    <fullyQualifiedTypeName name="javax.swing.text.DocumentFilter"/>
+    <fullyQualifiedTypeName name="javax.swing.text.Document"/>
 </qualifiedTypeNameHistroy>
