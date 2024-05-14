@@ -5,13 +5,20 @@ import java.util.*;
 public class meth {
 	private static List<String> parseInputToNumberList(String input) {
 		List<String> numbers = new ArrayList<String>();
-		numbers = new ArrayList<String>(Arrays.asList(input.split("[^0-9]")));
+		numbers = new ArrayList<String>(Arrays.asList(input.split("[^0-9.]")));
+		
+		for (int i=0; i<numbers.size(); i++) {
+			if (numbers.get(i).equals("")) {
+				numbers.remove(i);
+				i--;
+			}
+		}
 		return numbers;
 		
 	}
 	private static List<String> parseInputToOperands(String input) {
 		List<String> operands = new ArrayList<String>();
-		operands = new ArrayList<String>(Arrays.asList(input.replaceAll("[0-9]","").split("")));
+		operands = new ArrayList<String>(Arrays.asList(input.replaceAll("[0-9.]","").split("")));
 		return operands;
 		
 	}
@@ -67,10 +74,6 @@ public class meth {
 				i--;
 			}
 		}
-		
-		
-		System.out.println(numbers);
-		System.out.println(operands);
 		return Double.parseDouble(numbers.get(0));
 	}
 }
