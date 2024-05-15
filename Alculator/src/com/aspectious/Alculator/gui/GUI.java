@@ -53,7 +53,7 @@ public class GUI {
 		historyList.setLayoutOrientation(JList.VERTICAL);
 		historyList.setVisibleRowCount(3);
 		inputBox = new JTextField(20);
-		((AbstractDocument)inputBox.getDocument()).setDocumentFilter(new InputFilter());
+		//((AbstractDocument)inputBox.getDocument()).setDocumentFilter(new InputFilter());
 		inputBox.addActionListener(e -> {sendMeth();});
 		
 		
@@ -70,6 +70,8 @@ public class GUI {
 				JButton button = buttonArray[i][j];
 				 button = new JButton();
 				 button.setText(i+"");
+				 button.setBackground(Color.LIGHT_GRAY);
+				 button.setBorderPainted(true);
 				 button.setPreferredSize(new Dimension(60,30));
 				 
 				 
@@ -176,6 +178,7 @@ public class GUI {
 					}
 					else if (i==4 && j==3) {
 						button.setText("=");
+						button.setBackground(new Color(90,150,255));
 						button.addActionListener(e -> sendMeth());
 					}
 					
