@@ -1,13 +1,15 @@
 package com.aspectious.Alculator;
 
+import java.text.AttributedString;
 import java.util.*;
 
 public class meth {
 	private static List<String> parseInputToNumberList(String input) {
 		List<String> numbers = new ArrayList<String>();
-		numbers = new ArrayList<String>(Arrays.asList(input.split("[^0-9.]")));
+		numbers = new ArrayList<String>(Arrays.asList(input.split("[^0-9._]")));
 		
 		for (int i=0; i<numbers.size(); i++) {
+			numbers.set(i, numbers.get(i).replaceAll("_", "-"));
 			if (numbers.get(i).equals("")) {
 				numbers.remove(i);
 				i--;
@@ -18,7 +20,7 @@ public class meth {
 	}
 	private static List<String> parseInputToOperands(String input) {
 		List<String> operands = new ArrayList<String>();
-		operands = new ArrayList<String>(Arrays.asList(input.replaceAll("[0-9.]","").split("")));
+		operands = new ArrayList<String>(Arrays.asList(input.replaceAll("[0-9._]","").split("")));
 		return operands;
 		
 	}
@@ -27,7 +29,13 @@ public class meth {
 	public static boolean checkIfCalculable(String input) {
 		List<String> numbers = parseInputToNumberList(input);
 		List<String> operands = parseInputToOperands(input);
-		
+		for (int i=0; i<numbers.size(); i++) {
+			for (int j=1;j<numbers.get(i).length();j++) {
+				if ((String.valueOf(numbers.get(i).charAt(j)).equals("-"))) {
+					return false;
+				}
+			}
+		}
 		if (numbers.size() != operands.size() +1) {
 			return false;
 		} else {
