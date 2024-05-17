@@ -38,7 +38,7 @@ public class GUI {
 		boolean isCalc = meth.checkIfCalculable(formulae);
 		if (isCalc) {
 			double answer = meth.calculate(formulae);
-			listModel.add(0,inputBox.getText() + " = " + answer);
+			listModel.addElement(inputBox.getText() + " = " + answer);
 			inputBox.setText("");
 		} else {
 			JOptionPane.showMessageDialog(window, "Invalid input - Please try a valid equation","Error",0);
@@ -171,11 +171,12 @@ public class GUI {
 					
 					else if (i==4 && j==0) {
 						button.setText("0");
-						button.setPreferredSize(new Dimension(190,30));
+						button.setPreferredSize(new Dimension(130,30));
 						button.addActionListener(e -> inputBox.setText(inputBox.getText() + "0"));
 					}
 					else if (i==4 && j==2) {
 						button.setText(".");
+						button.setPreferredSize(new Dimension(60,30));
 						button.addActionListener(e -> inputBox.setText(inputBox.getText() + "."));
 					}
 					else if (i==4 && j==3) {
@@ -184,7 +185,7 @@ public class GUI {
 						button.addActionListener(e -> sendMeth());
 					}
 					
-					if ((i==4 && j==1)||(i==4 && j==2)) {
+					if ((i==4 && j==1)) {
 						button = null;
 					} else {
 						panel.add(button);

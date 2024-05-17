@@ -30,6 +30,9 @@ public class meth {
 		List<String> numbers = parseInputToNumberList(input);
 		List<String> operands = parseInputToOperands(input);
 		for (int i=0; i<numbers.size(); i++) {
+			if ((numbers.get(i).length() == 1) && ((String.valueOf(numbers.get(i).charAt(0)).equals("-")))) {
+				return false;
+			}
 			for (int j=1;j<numbers.get(i).length();j++) {
 				if ((String.valueOf(numbers.get(i).charAt(j)).equals("-"))) {
 					return false;
