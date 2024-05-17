@@ -24,8 +24,7 @@ public class Magpie2
 	/**
 	 * Gives a response to a user statement
 	 * 
-	 * @param statement
-	 *            the user statement
+	 * @param statement the user statement
 	 * @return a response based on the rules given
 	 */
 	public String getResponse(String statement)

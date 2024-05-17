@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 /**
  * A simple class to run the Magpie class.
  * @author Laurie White
@@ -13,12 +12,12 @@ public class MagpieRunner4
 	 */
 	public static void main(String[] args)
 	{
+		Magpie4 maggie = new Magpie4();
+		Scanner in = new Scanner(System.in);
 		
-
 		
 		System.out.println (maggie.getGreeting());
-		
-
+		String statement = in.nextLine();
 		
 		while (!statement.equals("Bye"))
 		{
